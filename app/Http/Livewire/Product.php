@@ -31,7 +31,7 @@ class Product extends Component
        
     }
 
-    public function btnSearch()
+    public function search()
     {
         $this->validate([
             'search' => "required"
@@ -43,7 +43,7 @@ class Product extends Component
     public function productSearch($search)
     {
         return ProductModel::where('name', 'like', '%'.$search.'%')
-        ->orWhere('price_in_cents', 'like', '$'.$search.'%')
+        ->orWhere('price_in_cents', 'like', '%'. ($search *  100).'%')
         ->orWhere('details', 'like', '%'.$search.'%')
         ->orWhere('publish', 'like', '%'.$search.'%')
         ->get();

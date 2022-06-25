@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->firstname,
-            'price_in_cents' => $this->faker->numberBetween(1000,9000),
+            'price_in_cents' => $this->faker->numberBetween(10,100) * 100,
             'details' => $this->faker->text,
             'publish' => $this->faker->randomElement(["Yes", "No"])
         ];

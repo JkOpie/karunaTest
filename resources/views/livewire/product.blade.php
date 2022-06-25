@@ -9,12 +9,12 @@
                 </div>
                 <div class="d-flex justify-content-end pb-3">
                     <div class="w-25">
-                        <input type="text" class="form-control" wire:model="search"> 
+                        <input type="text" class="form-control" wire:model="search" wire:keydown.enter='search'> 
                         @error('search')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-                    <button class="btn btn-primary ms-2" wire:click="btnSearch" style="height:fit-content">Search</button>
+                    <button class="btn btn-primary ms-2" wire:click="search" style="height:fit-content">Search</button>
                 </div>
                 <div class="card">
                     <div class="card-header">
